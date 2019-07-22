@@ -25,10 +25,41 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-maven-plugin</artifactId>
+				<version>5.6.0</version>
+				<configuration>
+					<serverPort>1080</serverPort>
+					<logLevel>DEBUG</logLevel>
+					<!-- <initializationClass>org.mockserver.maven.ExampleInitializationClass</initializationClass> -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>process-test-classes</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-netty</artifactId>
+			<version>5.6.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -36,34 +67,49 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-client-java</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>1.0.2</version>
-			<scope>test</scope>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.0.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>2.0.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-spring</artifactId>
-			<version>4.3.1</version>
-			<scope>test</scope>
+			<artifactId>cucumber-jvm</artifactId>
+			<version>2.0.0</version>
+			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
-			<version>1.0.5</version>
+			<version>1.0.6</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>4.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
 	</dependencies>
 </project>

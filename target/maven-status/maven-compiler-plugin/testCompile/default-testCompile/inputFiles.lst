@@ -1,2 +1,6 @@
+/Users/bardek01/eclipse_workspace/testing_template/src/test/java/mock/MockHelper.java
+/Users/bardek01/eclipse_workspace/testing_template/src/test/java/pageObjects/LoginPage.java
 /Users/bardek01/eclipse_workspace/testing_template/src/test/java/CucumberRunner.java
 /Users/bardek01/eclipse_workspace/testing_template/src/test/java/stepDefinitions/steps.java
+/Users/bardek01/eclipse_workspace/testing_template/src/test/java/PageObjectManager.java
+/Users/bardek01/eclipse_workspace/testing_template/src/test/java/helpers/HTTPSHelper.java
