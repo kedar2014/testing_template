@@ -1,6 +1,8 @@
 mock/MockHelper.class
 pageObjects/LoginPage.class
+mock/VideoStreamingClass.class
 stepDefinitions/steps.class
 helpers/HTTPSHelper.class
 PageObjectManager.class
 CucumberRunner.class
+mock/VideoStreamingClass$MyRunnable.class

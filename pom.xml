@@ -32,7 +32,7 @@
 				<configuration>
 					<serverPort>1080</serverPort>
 					<logLevel>DEBUG</logLevel>
-					<!-- <initializationClass>org.mockserver.maven.ExampleInitializationClass</initializationClass> -->
+					<initializationClass>mock.MockHelper</initializationClass>
 				</configuration>
 				<executions>
 					<execution>
@@ -94,14 +94,12 @@
 			<version>1.0.6</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
